@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MIYO — Good mood. Good yogurt.</title>
+<meta name="description" content="MIYO frozen yogurt in Pererenan, Bali. Find your flavour, build your cup layer by layer, and stay a while.">
+<meta name="theme-color" content="#faf7f0">
+<link rel="preload" href="assets/fonts/anton.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="nav">
+    <a class="brand" href="index.html" aria-label="MIYO home">
+      <span class="wordmark wordmark--nav" aria-hidden="true"></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-menu" id="site-menu" hidden aria-label="Main menu">
+      <div class="site-menu__inner">
+        <span class="wordmark wordmark--menu" aria-hidden="true"></span>
+        <ul>
+          <li><a href="our-story.html">Our story</a></li>
+          <li><a href="#flavours">Our flavours</a></li>
+          <li><a href="#reviews">Word of mouth</a></li>
+          <li><a href="#journal">MIYO moment</a></li>
+          <li><a href="#visit">Visit us</a></li>
+        </ul>
+        <p class="site-menu__tag">Good mood. Good yogurt. MIYO</p>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <h1 class="visually-hidden">MIYO — Good mood. Good yogurt.</h1>
+
+  <section class="film" id="film" aria-labelledby="film-title">
+    <div class="container film__head reveal">
+      <div>
+        <p class="kicker"><span class="kicker__dash"></span>A short film</p>
+        <h2 class="serif film__title" id="film-title">Eight seconds,<br>layer by layer.</h2>
+      </div>
+      <p class="film__lede">Scroll to build the cup — cold swirl, strawberries, mango, pistachio crumble, and a slow ribbon of honey.</p>
+    </div>
+
+    <div class="film__stage" id="filmStage">
+      <div class="film__sticky container">
+        <div class="film__view">
+          <figure class="film__frame">
+            <canvas id="filmCanvas" width="1280" height="720" role="img"
+              aria-label="An empty MIYO cup is filled with frozen yogurt, strawberries, mango, pistachio crumble and honey as you scroll."></canvas>
+            <div class="film__status" id="filmStatus"><i></i><span id="filmStatusText">Loading the cup · 0%</span></div>
+            <span class="film__time" id="filmTime">00:00 / 00:08</span>
+            <span class="film__cue" id="filmCue">Scroll to build</span>
+          </figure>
+
+          <nav class="film__rail" id="filmRail" aria-label="Jump to a stage of the cup">
+            <div class="film__track" aria-hidden="true"><span id="filmFill"></span></div>
+            <ol>
+              <li><button type="button" data-goto="0" aria-label="Go to step 1, the vessel"><i></i><span>Vessel</span></button></li>
+              <li><button type="button" data-goto="1" aria-label="Go to step 2, the swirl"><i></i><span>Swirl</span></button></li>
+              <li><button type="button" data-goto="2" aria-label="Go to step 3, strawberries"><i></i><span>Strawberry</span></button></li>
+              <li><button type="button" data-goto="3" aria-label="Go to step 4, mango"><i></i><span>Mango</span></button></li>
+              <li><button type="button" data-goto="4" aria-label="Go to step 5, pistachio crumble"><i></i><span>Pistachio</span></button></li>
+              <li><button type="button" data-goto="5" aria-label="Go to step 6, honey"><i></i><span>Honey</span></button></li>
+              <li><button type="button" data-goto="6" aria-label="Go to step 7, the finish"><i></i><span>Finish</span></button></li>
+            </ol>
+          </nav>
+        </div>
+
+        <div class="film__chapters" id="filmChapters">
+          <article class="chapter" data-at="0.00">
+            <p class="chapter__step"><span>01</span> The vessel</p>
+            <h3 class="chapter__title">It starts<br>with a <em>cup.</em></h3>
+            <p class="chapter__copy">A chilled MIYO cup waits under the nozzle. Just space, and a little anticipation.</p>
+            <p class="chapter__tag">Chilled cup</p>
+          </article>
+
+          <article class="chapter" data-at="1.45">
+            <p class="chapter__step"><span>02</span> The swirl</p>
+            <h3 class="chapter__title">Then the<br><em>swirl.</em></h3>
+            <p class="chapter__copy">Cold frozen yogurt spirals in, thick and slow, stacking into a soft peak.</p>
+            <p class="chapter__tag">Frozen yogurt</p>
+          </article>
+
+          <article class="chapter" data-at="2.08">
+            <p class="chapter__step"><span>03</span> Strawberries</p>
+            <h3 class="chapter__title">Strawberries,<br><em>still cold.</em></h3>
+            <p class="chapter__copy">Hand-cut berries settle into the sides — sharp, red, and bright against all that white.</p>
+            <p class="chapter__tag">Strawberry</p>
+          </article>
+
+          <article class="chapter" data-at="2.62">
+            <p class="chapter__step"><span>04</span> Mango</p>
+            <h3 class="chapter__title">Mango,<br><em>cubed.</em></h3>
+            <p class="chapter__copy">Golden blocks of ripe mango drop in, filling the gaps around the peak.</p>
+            <p class="chapter__tag">Mango</p>
+          </article>
+
+          <article class="chapter" data-at="3.32">
+            <p class="chapter__step"><span>05</span> Pistachio crumble</p>
+            <h3 class="chapter__title">A pistachio<br><em>dusting.</em></h3>
+            <p class="chapter__copy">Crushed pistachios and oat crumble shower down, catching on the fruit for crunch in every spoon.</p>
+            <p class="chapter__tag">Pistachio · Oat crumble</p>
+          </article>
+
+          <article class="chapter" data-at="5.55">
+            <p class="chapter__step"><span>06</span> Honey</p>
+            <h3 class="chapter__title">Honey, in a<br><em>slow ribbon.</em></h3>
+            <p class="chapter__copy">A thin stream glosses the fruit, pools at the rim, and starts to fall.</p>
+            <p class="chapter__tag">Wildflower honey</p>
+          </article>
+
+          <article class="chapter" data-at="7.55">
+            <p class="chapter__step"><span>07</span> The finish</p>
+            <h3 class="chapter__title">Serve it<br><em>like this.</em></h3>
+            <p class="chapter__copy">Eight seconds, one cup, built layer by layer. It only needs a spoon now.</p>
+            <p class="chapter__tag">MIYO · Pererenan</p>
+            <p class="chapter__actions"><button class="btn btn--primary" type="button" id="filmAgain">Build another cup
+              <svg class="icon" viewBox="0 0 14 14" aria-hidden="true"><path d="M7 11.2V2.8M3.2 6.6 7 2.8l3.8 3.8"/></svg>
+            </button></p>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <noscript>
+      <div class="container film__fallback">
+        <p>The scroll film needs JavaScript. Here is the clip:</p>
+        <video src="miyo-film-recolored.mp4" controls playsinline poster="poster.webp"></video>
+      </div>
+    </noscript>
+  </section>
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero__grid">
+      <div class="hero__copy reveal">
+        <p class="kicker"><span class="kicker__dash"></span>Frozen yogurt · Pererenan, Bali</p>
+        <h2 class="display hero__title" id="hero-title">Good mood.<br>Good yogurt.<br>MIYO.</h2>
+        <p class="hero__sub">Your favourite frozen yogurt moment in the heart of Pererenan, Bali</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#flavours">Explore Our Menu
+            <svg class="icon" viewBox="0 0 14 14" aria-hidden="true"><path d="M3.2 10.8 10.8 3.2M4.6 3.2h6.2v6.2"/></svg>
+          </a>
+          <a class="btn btn--ghost" href="#visit">Find Us
+            <svg class="icon" viewBox="0 0 14 14" aria-hidden="true"><path d="M3.2 10.8 10.8 3.2M4.6 3.2h6.2v6.2"/></svg>
+          </a>
+        </div>
+        <p class="rating">
+          <span class="stars" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M6 .8l1.57 3.18 3.51.51-2.54 2.48.6 3.5L6 8.82l-3.14 1.65.6-3.5L.92 4.49l3.51-.51z"/></svg><svg viewBox="0 0 12 12"><path d="M6 .8l1.57 3.18 3.51.51-2.54 2.48.6 3.5L6 8.82l-3.14 1.65.6-3.5L.92 4.49l3.51-.51z"/></svg><svg viewBox="0 0 12 12"><path d="M6 .8l1.57 3.18 3.51.51-2.54 2.48.6 3.5L6 8.82l-3.14 1.65.6-3.5L.92 4.49l3.51-.51z"/></svg><svg viewBox="0 0 12 12"><path d="M6 .8l1.57 3.18 3.51.51-2.54 2.48.6 3.5L6 8.82l-3.14 1.65.6-3.5L.92 4.49l3.51-.51z"/></svg><svg viewBox="0 0 12 12"><path d="M6 .8l1.57 3.18 3.51.51-2.54 2.48.6 3.5L6 8.82l-3.14 1.65.6-3.5L.92 4.49l3.51-.51z"/></svg></span>
+          <span>4.6/5 · 856 Google reviews</span>
+        </p>
+      </div>
+
+      <div class="hero__media reveal">
+        <figure class="hero__figure">
+          <img src="assets/hero-cup.webp" width="1082" height="1180" alt="A MIYO cup of pistachio frozen yogurt topped with blueberries and pistachio crumb">
+          <figcaption class="micro-row">
+            <span>Your Pererenan pause</span>
+            <a href="#visit">From 3:00 PM
+              <svg class="icon icon--tiny" viewBox="0 0 14 14" aria-hidden="true"><path d="M3.2 10.8 10.8 3.2M4.6 3.2h6.2v6.2"/></svg>
+            </a>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <div class="ribbon" aria-hidden="true">
+    <div class="ribbon__track">
+      <div class="ribbon__group">
+        <span>Swirl.</span>
+        <svg class="spark" viewBox="0 0 20 20"><path d="M10 0v20M0 10h20M2.9 2.9l14.2 14.2M17.1 2.9 2.9 17.1"/></svg>
+        <span>Top.</span>
+        <svg class="spark" viewBox="0 0 20 20"><path d="M10 0v20M0 10h20M2.9 2.9l14.2 14.2M17.1 2.9 2.9 17.1"/></svg>
+        <span>Smile.</span>
+        <svg class="spark" viewBox="0 0 20 20"><path d="M10 0v20M0 10h20M2.9 2.9l14.2 14.2M17.1 2.9 2.9 17.1"/></svg>
+        <span>Repeat.</span>
+        <svg class="spark" viewBox="0 0 20 20"><path d="M10 0v20M0 10h20M2.9 2.9l14.2 14.2M17.1 2.9 2.9 17.1"/></svg>
+      </div>
+      <div class="ribbon__group ribbon__group--clone">
+        <span>Swirl.</span>
+        <svg class="spark" viewBox="0 0 20 20"><path d="M10 0v20M0 10h20M2.9 2.9l14.2 14.2M17.1 2.9 2.9 17.1"/></svg>
+        <span>Top.</span>
+        <svg class="spark" viewBox="0 0 20 20"><path d="M10 0v20M0 10h20M2.9 2.9l14.2 14.2M17.1 2.9 2.9 17.1"/></svg>
+        <span>Smile.</span>
+        <svg class="spark" viewBox="0 0 20 20"><path d="M10 0v20M0 10h20M2.9 2.9l14.2 14.2M17.1 2.9 2.9 17.1"/></svg>
+        <span>Repeat.</span>
+        <svg class="spark" viewBox="0 0 20 20"><path d="M10 0v20M0 10h20M2.9 2.9l14.2 14.2M17.1 2.9 2.9 17.1"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <section class="flavours" id="flavours" aria-labelledby="flavours-title">
+    <div class="container">
+      <p class="kicker"><span class="kicker__num">02</span> The flavours</p>
+      <div class="section-head reveal">
+        <h2 class="serif section-title" id="flavours-title">Find your flavour.</h2>
+        <p class="section-lede">Six flavours. Your kind of good mood. Start with a favourite, or make room for something new.</p>
+      </div>
+
+      <div class="flavour-grid">
+        <a class="flavour flavour--original reveal" href="#visit">
+          <span class="flavour__top"><span>MIYO / Frozen yogurt</span>
+            <svg class="icon" viewBox="0 0 14 14" aria-hidden="true"><path d="M3.2 10.8 10.8 3.2M4.6 3.2h6.2v6.2"/></svg>
+          </span>
+          <svg class="flavour__rings" viewBox="0 0 160 160" aria-hidden="true">
+            <g fill="none" stroke="#263e57" stroke-width="1"><circle cx="80" cy="80" r="76"/><circle cx="80" cy="80" r="62"/><circle cx="80" cy="80" r="48"/><circle cx="80" cy="80" r="34"/><circle cx="80" cy="80" r="20"/></g>
+          </svg>
+          <span class="flavour__name">Original</span>
+        </a>
+
+        <a class="flavour flavour--mango reveal" href="#visit">
+          <span class="flavour__top"><span>MIYO / Frozen yogurt</span>
+            <svg class="icon" viewBox="0 0 14 14" aria-hidden="true"><path d="M3.2 10.8 10.8 3.2M4.6 3.2h6.2v6.2"/></svg>
+          </span>
+          <svg class="flavour__rings" viewBox="0 0 160 160" aria-hidden="true">
+            <g fill="none" stroke="#263e57" stroke-width="1"><circle cx="80" cy="80" r="76"/><circle cx="80" cy="80" r="62"/><circle cx="80" cy="80" r="48"/><circle cx="80" cy="80" r="34"/><circle cx="80" cy="80" r="20"/></g>
+          </svg>
+          <span class="flavour__name">Mango</span>
+        </a>
+
+        <a class="flavour flavour--biscoff reveal" href="#visit">
+          <span class="flavour__top"><span>MIYO / Frozen yogurt</span>
+            <svg class="icon" viewBox="0 0 14 14" aria-hidden="true"><path d="M3.2 10.8 10.8 3.2M4.6 3.2h6.2v6.2"/></svg>
+          </span>
+          <svg class="flavour__rings" viewBox="0 0 160 160" aria-hidden="true">
+            <g fill="none" stroke="#263e57" stroke-width="1"><circle cx="80" cy="80" r="76"/><circle cx="80" cy="80" r="62"/><circle cx="80" cy="80" r="48"/><circle cx="80" cy="80" r="34"/><circle cx="80" cy="80" r="20"/></g>
+          </svg>
+          <span class="flavour__name">Biscoff</span>
+        </a>
+
+        <a class="flavour flavour--pistachio reveal" href="#visit">
+          <span class="flavour__top"><span>MIYO / Frozen yogurt</span>
+            <svg class="icon" viewBox="0 0 14 14" aria-hidden="true"><path d="M3.2 10.8 10.8 3.2M4.6 3.2h6.2v6.2"/></svg>
+          </span>
+          <svg class="flavour__rings" viewBox="0 0 160 160" aria-hidden="true">
+            <g fill="none" stroke="#263e57" stroke-width="1"><circle cx="80" cy="80" r="76"/><circle cx="80" cy="80" r="62"/><circle cx="80" cy="80" r="48"/><circle cx="80" cy="80" r="34"/><circle cx="80" cy="80" r="20"/></g>
+          </svg>
+          <span class="flavour__name">Pistachio</span>
+        </a>
+
+        <a class="flavour flavour--coconut reveal" href="#visit">
+          <span class="flavour__top"><span>MIYO / Frozen yogurt</span>
+            <svg class="icon" viewBox="0 0 14 14" aria-hidden="true"><path d="M3.2 10.8 10.8 3.2M4.6 3.2h6.2v6.2"/></svg>
+          </span>
+          <svg class="flavour__rings" viewBox="0 0 160 160" aria-hidden="true">
+            <g fill="none" stroke="#263e57" stroke-width="1"><circle cx="80" cy="80" r="76"/><circle cx="80" cy="80" r="62"/><circle cx="80" cy="80" r="48"/><circle cx="80" cy="80" r="34"/><circle cx="80" cy="80" r="20"/></g>
+          </svg>
+          <span class="flavour__name">Coconut</span>
+        </a>
+
+        <a class="flavour flavour--caramel reveal" href="#visit">
+          <span class="flavour__top"><span>MIYO / Frozen yogurt</span>
+            <svg class="icon" viewBox="0 0 14 14" aria-hidden="true"><path d="M3.2 10.8 10.8 3.2M4.6 3.2h6.2v6.2"/></svg>
+          </span>
+          <svg class="flavour__rings" viewBox="0 0 160 160" aria-hidden="true">
+            <g fill="none" stroke="#263e57" stroke-width="1"><circle cx="80" cy="80" r="76"/><circle cx="80" cy="80" r="62"/><circle cx="80" cy="80" r="48"/><circle cx="80" cy="80" r="34"/><circle cx="80" cy="80" r="20"/></g>
+          </svg>
+          <span class="flavour__name">Salted Caramel</span>
+        </a>
+      </div>
+
+      <p class="footnote">Colour studies, not product photographs. Ask in store for today's flavour availability.</p>
+    </div>
+  </section>
+
+  <section class="reviews" id="reviews" aria-labelledby="reviews-title">
+    <div class="container">
+      <p class="kicker"><span class="kicker__num">03</span> Word of mouth</p>
+      <div class="reviews__head reveal">
+        <h2 class="serif section-title" id="reviews-title">Good moods, shared.</h2>
+        <p class="rating rating--reviews">
+          <span class="stars" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M6 .8l1.57 3.18 3.51.51-2.54 2.48.6 3.5L6 8.82l-3.14 1.65.6-3.5L.92 4.49l3.51-.51z"/></svg><svg viewBox="0 0 12 12"><path d="M6 .8l1.57 3.18 3.51.51-2.54 2.48.6 3.5L6 8.82l-3.14 1.65.6-3.5L.92 4.49l3.51-.51z"/></svg><svg viewBox="0 0 12 12"><path d="M6 .8l1.57 3.18 3.51.51-2.54 2.48.6 3.5L6 8.82l-3.14 1.65.6-3.5L.92 4.49l3.51-.51z"/></svg><svg viewBox="0 0 12 12"><path d="M6 .8l1.57 3.18 3.51.51-2.54 2.48.6 3.5L6 8.82l-3.14 1.65.6-3.5L.92 4.49l3.51-.51z"/></svg><svg viewBox="0 0 12 12"><path d="M6 .8l1.57 3.18 3.51.51-2.54 2.48.6 3.5L6 8.82l-3.14 1.65.6-3.5L.92 4.49l3.51-.51z"/></svg></span>
+          <span>4.6/5 from 856 Google reviews</span>
+        </p>
+      </div>
+
+      <div class="review-grid">
+        <figure class="review reveal">
+          <span class="review__mark" aria-hidden="true">“</span>
+          <blockquote>Thus far the best fro-yo I had!</blockquote>
+          <figcaption><span class="review__author">Melissa Lee</span><span class="review__source">Google review excerpt · via Super Social</span></figcaption>
+        </figure>
+        <figure class="review reveal">
+          <span class="review__mark" aria-hidden="true">“</span>
+          <blockquote>First time trying MIYO, and I was genuinely impressed!</blockquote>
+          <figcaption><span class="review__author">keisha octaviani</span><span class="review__source">Google review excerpt · via Super Social</span></figcaption>
+        </figure>
+        <figure class="review reveal">
+          <span class="review__mark" aria-hidden="true">“</span>
+          <blockquote>The entire store was spotless and very well maintained.</blockquote>
+          <figcaption><span class="review__author">Tim Tim</span><span class="review__source">Google review excerpt · via Super Social</span></figcaption>
+        </figure>
+      </div>
+
+      <p class="reviews__cta reveal">
+        <a class="btn btn--outline" href="https://www.google.com/maps/search/?api=1&amp;query=MIYO+Pererenan" target="_blank" rel="noopener">Read &amp; review on Google
+          <svg class="icon" viewBox="0 0 14 14" aria-hidden="true"><path d="M3.2 10.8 10.8 3.2M4.6 3.2h6.2v6.2"/></svg>
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <section class="journal" id="journal" aria-labelledby="journal-title">
+    <div class="container">
+      <p class="kicker"><span class="kicker__num">04</span> The MIYO moment</p>
+      <div class="section-head reveal">
+        <h2 class="serif section-title" id="journal-title">Wish you were here.</h2>
+        <p class="section-lede">A look around our little corner of Pererenan. Stay a while.</p>
+      </div>
+
+      <div class="journal__grid reveal">
+        <div class="journal__main">
+          <img src="assets/journal-evening.webp" width="1600" height="660" loading="lazy"
+            alt="Evening at MIYO Pererenan: the lit counter, guests outside, and tables beneath the trees">
+          <div class="journal__caption">
+            <p class="serif">Room for a pause.<br>And a little more.</p>
+            <p class="journal__label">MIYO, Pererenan · Bali</p>
+          </div>
+        </div>
+        <img class="journal__side" src="assets/journal-yogurt.webp" width="976" height="1224" loading="lazy"
+          alt="A MIYO frozen yogurt cup against a warm evening backdrop">
+      </div>
+
+      <div class="journal__foot reveal">
+        <span>More little moments on Instagram</span>
+        <a href="https://www.instagram.com/miyobali/" target="_blank" rel="noopener">@miyobali
+          <svg class="icon icon--tiny" viewBox="0 0 14 14" aria-hidden="true"><path d="M3.2 10.8 10.8 3.2M4.6 3.2h6.2v6.2"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="visit" id="visit" aria-labelledby="visit-title">
+    <div class="container visit__grid">
+      <div class="visit__copy reveal">
+        <p class="kicker"><span class="kicker__num">05</span> Visit us</p>
+        <h2 class="display visit__title" id="visit-title">Frozen Yogurt<br>Pererenan</h2>
+        <p class="visit__lede">Your Froyo Bali moment starts right here. Come by, find your flavour and settle in.</p>
+
+        <p class="micro-label">Find our little corner</p>
+        <p class="visit__address">Jl. Pantai Pererenan No.99, Pererenan, Bali 80361, Indonesia</p>
+
+        <div class="rule"></div>
+
+        <p class="visit__hours">From 3:00 PM · <a href="https://www.google.com/maps/search/?api=1&amp;query=MIYO+Pererenan" target="_blank" rel="noopener">Check today's hours
+          <svg class="icon icon--tiny" viewBox="0 0 14 14" aria-hidden="true"><path d="M3.2 10.8 10.8 3.2M4.6 3.2h6.2v6.2"/></svg>
+        </a></p>
+        <p class="visit__note">See Google Maps for current opening hours.</p>
+
+        <div class="rule"></div>
+
+        <div class="visit__actions">
+          <a class="btn btn--primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=MIYO+Pererenan" target="_blank" rel="noopener">Get Directions
+            <svg class="icon" viewBox="0 0 14 14" aria-hidden="true"><path d="M3.2 10.8 10.8 3.2M4.6 3.2h6.2v6.2"/></svg>
+          </a>
+          <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=MIYO+Pererenan" target="_blank" rel="noopener">Google Maps
+            <svg class="icon" viewBox="0 0 14 14" aria-hidden="true"><path d="M3.2 10.8 10.8 3.2M4.6 3.2h6.2v6.2"/></svg>
+          </a>
+        </div>
+
+        <p class="visit__social">Say hello on Instagram · <a href="https://www.instagram.com/miyobali/" target="_blank" rel="noopener">@miyobali
+          <svg class="icon icon--tiny" viewBox="0 0 14 14" aria-hidden="true"><path d="M3.2 10.8 10.8 3.2M4.6 3.2h6.2v6.2"/></svg>
+        </a></p>
+      </div>
+
+      <div class="mapcard reveal" role="group" aria-label="Schematic location guide for MIYO Pererenan">
+        <svg class="mapcard__rings" viewBox="0 0 600 600" aria-hidden="true">
+          <g fill="none" stroke="#6d84bf" stroke-width="1">
+            <circle cx="300" cy="300" r="94"/><circle cx="300" cy="300" r="184"/><circle cx="300" cy="300" r="274"/><circle cx="300" cy="300" r="364"/><circle cx="300" cy="300" r="454"/>
+          </g>
+        </svg>
+        <div class="mapcard__top">
+          <span>Pererenan · Bali</span>
+          <span class="mapcard__compass" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.5"/><path d="M15.8 8.2 13 13l-4.8 2.8L11 11z"/></svg>
+          </span>
+        </div>
+        <div class="mapcard__center">
+          <span class="mapcard__pin" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          </span>
+          <span class="wordmark wordmark--map" aria-hidden="true"></span>
+          <a class="mapcard__address" href="https://www.google.com/maps/search/?api=1&amp;query=MIYO+Pererenan" target="_blank" rel="noopener">Jl. Pantai Pererenan No.99</a>
+        </div>
+        <div class="mapcard__bottom">
+          <span>Location guide · schematic, not to scale</span>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=MIYO+Pererenan" target="_blank" rel="noopener">Open Google Maps for your route
+            <svg class="icon icon--tiny" viewBox="0 0 14 14" aria-hidden="true"><path d="M3.2 10.8 10.8 3.2M4.6 3.2h6.2v6.2"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="closing">
+  <div class="container closing__inner">
+    <div class="closing__head">
+      <p class="serif closing__title">Same place. New favourite moment.</p>
+      <nav class="closing__nav" aria-label="Footer">
+        <a href="our-story.html">Our Story</a>
+        <a href="#visit">Visit Us</a>
+        <a href="https://www.instagram.com/miyobali/" target="_blank" rel="noopener">Instagram
+          <svg class="icon icon--tiny" viewBox="0 0 14 14" aria-hidden="true"><path d="M3.2 10.8 10.8 3.2M4.6 3.2h6.2v6.2"/></svg>
+        </a>
+      </nav>
+    </div>
+    <div class="closing__sign" aria-hidden="true">
+      <span class="wordmark wordmark--sign"></span>
+    </div>
+    <div class="closing__foot">
+      <span>© MIYO · Good mood. Good yogurt.</span>
+      <span>Photography: Super Social / Yogi Times</span>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js?v=2"></script>
+</body>
+</html>
